@@ -42,7 +42,7 @@ class Translator
     private function translateKeysInString($string, array $matches)
     {
         foreach($matches as $match){
-            $string = str_replace($match[0], $this->get($match[1]), $string);
+            $string = str_replace($match[0], $this->translate($match[1]), $string);
         }
 
         return $string;
