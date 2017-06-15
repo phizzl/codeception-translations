@@ -39,7 +39,7 @@ class TranslationsModule extends Module
     private function loadFromFile($file)
     {
         if(!in_array(substr($file, 0 , 1), ["\\", "/"])){
-            $file = codecept_data_dir() . DIRECTORY_SEPARATOR . $file;
+            $file = \Codeception\Configuration::dataDir() . $file;
         }
 
         if(!is_file($file)){
