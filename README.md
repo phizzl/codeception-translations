@@ -19,6 +19,19 @@ modules:
 
 Of course you can also use environments to have different translations.
 
+You're also able to load translations from a separate yaml file. Instead filling the _translations_ option with an array structure you can add a file
+
+```yaml
+actor: AcceptanceTester
+modules:
+    enabled:
+        - \Phizzl\Codeception\Modules\Translations\TranslationsModule
+    config:
+        \Phizzl\Codeception\Modules\Translations\TranslationsModule:
+            translations: "lang_en.yml"
+```
+If you dont use an absolute path the given file will be searched in your configured data directory.
+
 Now you are able to translate strings in your Cest files.
 
 ```php
